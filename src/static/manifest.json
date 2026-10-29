@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Schoology Plus",
   "description": "Schoology Plus enhances your Schoology experience with numerous interface improvements",
-  "version": "10.1.0",
+  "version": "10.2.0",
   "homepage_url": "https://schoologypl.us?utm_source=ext-homepage-link",
   "action": {
     "default_icon": {
@@ -16,8 +16,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "schoology.plus@aopell.me",
-      "update_url": "https://schoologypl.us/firefox_updates.json"
+      "id": "schoology.plus.fcps@truekas.dev"
     }
   },
   "icons": {
