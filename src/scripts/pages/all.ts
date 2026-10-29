@@ -60,7 +60,6 @@ export async function load() {
     pageModifications();
     await handleNewVersion();
     loadCourseIcons();
-    activateEasterEgg();
     addDarkThemeToggleButton();
     addSplusSettingsButton();
     fixNavbarSvgIconColors();
@@ -149,7 +148,7 @@ function updateDefaultDomainSetting() {
             "developer.schoology.com",
             "support.schoology.com",
             "info.schoology.com",
-            "files-cdn.schoology.com",
+            "files-cdn.schoology.com",https://github.com/truekas/SchoologyPlus-fcps
             "status.schoology.com",
             "ui.schoology.com",
             "www.schoology.com",
@@ -327,49 +326,6 @@ async function loadCourseIcons() {
     if (profilePicLoadTasks.length > 0) {
         Theme.setProfilePictures();
     }
-}
-
-function activateEasterEgg() {
-    let video = document.body.appendChild(
-        createElement("video", ["easter-egg"], {
-            onended: () => {
-                video.style.visibility = "hidden";
-            },
-        })
-    );
-
-    let source = createElement("source", [], {
-        src: "https://gist.github.com/aopell/0fe2408cffbab2b6fadb18ebaa28808f/raw/77853f137329c042c34bdb5be38c1930357c0531/cut.webm",
-        type: "video/webm",
-    });
-
-    let sourceSet = false;
-
-    document.body.addEventListener("keydown", data => {
-        if (data.altKey && data.code === "KeyC") {
-            if (!sourceSet) {
-                video.appendChild(source);
-                sourceSet = true;
-            }
-            video.style.visibility = "visible";
-            video.currentTime = 0;
-            video.play();
-
-            trackEvent("perform_action", {
-                id: "activate",
-                context: "Easter Egg",
-                value: "confetti",
-                legacyTarget: "Easter Egg",
-                legacyAction: "play",
-                legacyLabel: "Easter Egg",
-            });
-        } else if (data.altKey && data.code === "KeyB") {
-            Modal.openModal("beta-modal");
-        } else if (data.key === "Escape") {
-            video.style.visibility = "hidden";
-            video.pause();
-        }
-    });
 }
 
 function addDarkThemeToggleButton() {
