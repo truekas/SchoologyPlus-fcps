@@ -148,7 +148,7 @@ function updateDefaultDomainSetting() {
             "developer.schoology.com",
             "support.schoology.com",
             "info.schoology.com",
-            "files-cdn.schoology.com",https://github.com/truekas/SchoologyPlus-fcps
+            "files-cdn.schoology.com",
             "status.schoology.com",
             "ui.schoology.com",
             "www.schoology.com",
@@ -1125,7 +1125,7 @@ async function attemptDisplayCourseAliases() {
                 content: "${Settings.CourseNicknames.nestedValue(aliasedCourseId)}";
                 visibility: visible;
                 word-spacing:normal;
-                letter-spacing:normal; 
+                letter-spacing:normal;
             }`,
                 sheet.cssRules.length
             );
